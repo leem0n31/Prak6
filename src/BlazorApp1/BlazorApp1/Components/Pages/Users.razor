@@ -1,0 +1,25 @@
+﻿@page "/users"
+@using Microsoft.EntityFrameworkCore;
+@using BlazorApp1.Models;
+@inject LeemonContext context
+
+<h2>Пользователи:
+
+</h2>
+
+@foreach(var user in users){
+    <h3>Никнейм: @user.Username </h3>
+    <p>Почта: @user.Email</p>
+    <p>Пароль: @user.PasswordHash</p>
+    <hr/>
+}
+
+@code {
+    private List<User> users = new List<User>();
+    protected override async Task OnInitializedAsync()
+    {
+        users = await context.Users.ToListAsync();
+    }
+
+
+}

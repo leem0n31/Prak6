@@ -1,0 +1,63 @@
+﻿@using BlazorApp1.Auth;
+@using Microsoft.AspNetCore.Components.Authorization
+
+@inherits LayoutComponentBase
+
+@inject AuthenticationStateProvider authStateProvider
+@inject NavigationManager navManager
+
+
+<div class="container-fluid bg-light-gray">
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Добро пожаловать!</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <NavLink class="nav-link" href="/">Home</NavLink>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item">
+
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @Body
+    </main>
+
+    <footer class="bg-light text-center py-3 mt-4">
+        <p></p>
+    </footer>
+</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<AuthorizeView>
+    <Authorized>
+        <a @onclick="Logout" href="javascript:void(0)">Logout</a>
+    </Authorized>
+    <NotAuthorized>
+
+    </NotAuthorized>
+</AuthorizeView>
+@code {
+    private async Task Logout()
+    {
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationStateAsync(null);
+        navManager.NavigateTo("/", true);
+    }
+}

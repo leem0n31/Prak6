@@ -1,0 +1,77 @@
+﻿@page "/"
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card bg-light text-dark">
+                <img src="https://stekloinstrument.ru/image/avatarka.png" class="card-img-top" alt="Пользователи" />
+                <div class="card-body text-center">
+                    <NavLink class="nav-link" href="Users">
+                        <h5 class="card-title">Пользователи</h5>
+                    </NavLink>
+                    <p class="card-text">Изучите всех пользователей</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card bg-light text-dark">
+
+                <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/f3e6afaa-44f1-4edc-a073-ac7bea686659/1920x" class="card-img-top" alt="Фильмы" />
+                <div class="card-body text-center">
+                    <NavLink class="nav-link" href="Movies">
+                        <h5 class="card-title">Фильмы</h5>
+                    </NavLink>
+                    <p class="card-text">Посмотрите фильмы.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card bg-light text-dark">
+                <img src="https://a.d-cd.net/gnwbJjFpna_8QpliwJ5maCtNp2Q-1920.jpg" class="card-img-top" alt="Рейтинг" />
+                <div class="card-body text-center">
+                    <NavLink class="nav-link" href="Reviews">
+                        <h5 class="card-title">Рейтинг</h5>
+                    </NavLink>
+                    <p class="card-text">Посмотрите рейтинги фильмов.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card bg-light text-dark">
+                <img src="https://avatars.mds.yandex.net/i?id=eb6460da1e34548b17c9d7eb16f386a6_l-6947113-images-thumbs&n=13" class="card-img-top" alt="Добавить" />
+                <div class="card-body text-center">
+                    <NavLink class="nav-link" href="Adduser">
+                        <h5 class="card-title">Добавить</h5>
+                    </NavLink>
+                    <p class="card-text">Добавить нового пользователя.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card bg-light text-dark">
+                <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_65a5308614bb573f541fa25a_65a53182cbb3095c0e185dad/scale_1200" class="card-img-top" alt="Авторизоваться" />
+                <div class="card-body text-center">
+                    <NavLink class="nav-link" href="login">
+                        <h5 class="card-title">Войти</h5>
+                    </NavLink>
+                    <p class="card-text">Войти в систему.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    .card {
+        background-color: #d3d3d3;
+    }
+
+    .card-title, .card-text {
+        color: #333;
+    }
+</style>
